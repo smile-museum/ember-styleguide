@@ -63,3 +63,6 @@ configFiles.forEach((configFile) =>
 );
 
 console.log('🎉🎉🎉 Setup complete');
+console.log(
+  'For instructions on how to setup your IDE with various tools that have been setup for you visit https://github.com/smile-io/ember-styleguide#ide-support',
+);
