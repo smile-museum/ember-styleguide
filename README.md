@@ -4,7 +4,7 @@ A standard way to share & configure our frontend style guide across multiple pro
 
 ## Installation
 
-- Run `yarn install @smile-io/frontend-styleguide`
+- Run `yarn install @smile-io/ember-styleguide`
 - Run `yarn setup-smile-styleguide`
 
 ## Features
