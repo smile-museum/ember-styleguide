@@ -1,0 +1,30 @@
+{
+	"name": "@smile-io/frontend-styleguide",
+	"version": "1.0.0",
+	"description": "Styleguide definitions for smile.io projects",
+	"license": "ISC",
+	"author": "siva@rubberduck.engineering",
+	"bin": {
+		"setup-smile-styleguide": "index.js"
+	},
+	"scripts": {
+		"test": "eslint ."
+	},
+	"dependencies": {
+		"read-pkg": "^4.0.1",
+		"write-pkg": "^3.2.0",
+		"yarn-install": "^1.0.0"
+	},
+	"devDependencies": {
+		"ember-cli-eslint": "^4.2.3",
+		"eslint-plugin-ember": "^5.2.0",
+		"husky": "^1.0.0-rc.14",
+		"precise-commits": "^1.0.2",
+		"prettier": "^1.14.2"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "precise-commits"
+		}
+	}
+}
