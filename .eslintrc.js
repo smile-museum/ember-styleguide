@@ -38,7 +38,13 @@ module.exports = {
     'ember/order-in-models': [
       2,
       {
-        order: ['attribute', 'relationship', 'single-line-function', 'multi-line-function'],
+        order: [
+          // prettier-ignore
+          'attribute',
+          'relationship',
+          'single-line-function',
+          'multi-line-function',
+        ],
       },
     ],
 
