@@ -34,6 +34,87 @@ module.exports = {
     'ember/no-empty-attrs': 2,
     'ember/no-jquery': 2,
     'ember/no-observers': 2,
+
+    'ember/order-in-models': [
+      2,
+      {
+        order: ['attribute', 'relationship', 'single-line-function', 'multi-line-function'],
+      },
+    ],
+
+    'ember/order-in-components': [
+      2,
+      {
+        order: [
+          'service',
+          'property',
+          'empty-method',
+          'single-line-function',
+          'multi-line-function',
+          'observer',
+          'init',
+          [
+            // all the members of this array will be treated equally
+            'didReceiveAttrs',
+            'willRender',
+            'willInsertElement',
+            'didInsertElement',
+            'didRender',
+            'didUpdateAttrs',
+            'willUpdate',
+            'didUpdate',
+          ],
+          'method',
+          'actions',
+          ['willDestroyElement', 'willClearRender', 'didDestroyElement'], // all the members of this array will be treated equally
+        ],
+      },
+    ],
+
+    'ember/order-in-controllers': [
+      2,
+      {
+        order: [
+          'query-params',
+          'controller',
+          'service',
+          'inherited-property',
+          'empty-method',
+          'property',
+          'single-line-function',
+          'multi-line-function',
+          'observer',
+          'method',
+          'actions',
+        ],
+      },
+    ],
+
+    'ember/order-in-routes': [
+      2,
+      {
+        order: [
+          'service',
+          'inherited-property',
+          'property',
+          'single-line-function',
+          'multi-line-function',
+          'beforeModel',
+          'model',
+          'afterModel',
+          'serialize',
+          'setupController',
+          'redirect',
+          'activate',
+          'renderTemplate',
+          'resetController',
+          'deactivate',
+          'method',
+          'actions',
+          'empty-method',
+        ],
+      },
+    ],
   },
   overrides: [
     // node files
