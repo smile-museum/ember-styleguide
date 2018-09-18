@@ -13,11 +13,11 @@ module.exports = {
     SmileUI: true,
   },
   rules: {
-    camelcase: 'off',
     'comma-dangle': 'off',
     'no-empty': ['error', { allowEmptyCatch: true }],
     'object-curly-spacing': ['error', 'always', { arraysInObjects: true }],
     'array-bracket-spacing': ['error', 'always'],
+    'array-element-newline': ['error', 'consistent'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'template-curly-spacing': ['error', 'always'],
