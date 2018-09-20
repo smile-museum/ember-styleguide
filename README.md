@@ -1,6 +1,6 @@
-# Smile.io Frontend styleguide
+# Smile.io Ember style guide
 
-A standard way to share & configure our frontend style guide across multiple projects.
+A cutting edge approach for sharing configurations for different tools across ember projects ✨✨✨
 
 ## Installation
 
@@ -19,6 +19,10 @@ A standard way to share & configure our frontend style guide across multiple pro
 - [Prettier][4]
 - [ESLint][5]
 - [Stylelint][6]
+
+## Gotchas
+
+- If you're using vscode then add, `"[handlebars]": { "editor.formatOnSave": false },` to your `settings.json` file so that the default formatter isn't run on hbs files.
 
 [1]: https://prettier.io/docs/en/precommit.html#option-4-precise-commits-https-githubcom-jameshenry-precise-commits
 [2]: https://github.com/ember-template-lint/ember-template-lint
