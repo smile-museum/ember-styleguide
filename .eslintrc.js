@@ -15,7 +15,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'always', { arraysInObjects: true }],
     // 'array-bracket-spacing': ['error', 'always'],
     'array-element-newline': ['error', 'consistent'],
-    quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    quotes: ['error', 'single', { allowTemplateLiterals: true, avoidEscape: true }],
     semi: ['error', 'always'],
     // 'template-curly-spacing': ['error', 'always'],
     'generator-star-spacing': [
