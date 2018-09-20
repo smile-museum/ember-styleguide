@@ -9,9 +9,6 @@ module.exports = {
   env: {
     browser: true,
   },
-  globals: {
-    SmileUI: true,
-  },
   rules: {
     'comma-dangle': 'off',
     'no-empty': ['error', { allowEmptyCatch: true }],
