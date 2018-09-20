@@ -13,11 +13,11 @@ module.exports = {
     'comma-dangle': 'off',
     'no-empty': ['error', { allowEmptyCatch: true }],
     'object-curly-spacing': ['error', 'always', { arraysInObjects: true }],
-    'array-bracket-spacing': ['error', 'always'],
+    // 'array-bracket-spacing': ['error', 'always'],
     'array-element-newline': ['error', 'consistent'],
-    quotes: ['error', 'single'],
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
     semi: ['error', 'always'],
-    'template-curly-spacing': ['error', 'always'],
+    // 'template-curly-spacing': ['error', 'always'],
     'generator-star-spacing': [
       'error',
       {
@@ -127,7 +127,8 @@ module.exports = {
         'testem.js',
         'blueprints/*/index.js',
         'config/**/*.js',
-        'lib/*/index.js',
+        'lib/*/*.js',
+        'lib/*.js',
       ],
       parserOptions: {
         sourceType: 'script',
