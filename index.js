@@ -1,15 +1,5 @@
 #!/usr/bin/env node
 
-// `yarn add prettier precise-commits husky@next --dev`
-//
-/**
-{
-  "husky": 
-}
-   */
-
-//    ''
-
 const install = require('yarn-install');
 const readPkg = require('read-pkg');
 const writePkg = require('write-pkg');
