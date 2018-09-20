@@ -34,7 +34,7 @@ const getUserSelection = require('./lib/get-user-selection');
 /* eslint-env node */
 'use strict';
 
-module.exports = require('@smile-io/frontend-styleguide/${fileName.replace('.js', '')}');
+module.exports = require('@smile-io/ember-styleguide/${fileName.replace('.js', '')}');
 
 `;
 
