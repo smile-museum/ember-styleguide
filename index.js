@@ -1,39 +1,34 @@
 #!/usr/bin/env node
 
-const install = require('yarn-install');
-const readPkg = require('read-pkg');
-const writePkg = require('write-pkg');
 const fs = require('fs');
 const path = require('path');
+const yarnInstall = require('yarn-install');
+const tools = require('./lib/tools');
 
-const deps = [
-  'husky',
-  'precise-commits',
-  'prettier',
-  'eslint-config-prettier',
-  'ember-cli-scss-lint',
-];
+const getUserSelection = require('./lib/get-user-selection');
 
-install({
-  deps,
-  dev: true,
-  cwd: process.cwd(),
-});
+(async () => {
+  let selectedTools = await getUserSelection();
 
-let pkg = readPkg.sync({ normalize: false });
+  let depsToInstall = [];
+  let configFiles = [];
 
-pkg['husky'] = {
-  hooks: {
-    'pre-commit': 'precise-commits',
-  },
-};
+  selectedTools.forEach((toolName) => {
+    if (tools[toolName].deps) {
+      depsToInstall = [...depsToInstall, ...tools[toolName].deps];
+    }
 
-pkg['scripts']['prettier'] = `prettier --write '{app,tests,mirage}/**/*.js' *.js`;
-pkg['scripts'] = pkg.scripts;
+    if (tools[toolName].configFiles) {
+      configFiles = [...configFiles, ...tools[toolName].configFiles];
+    }
+  });
 
-writePkg.sync(pkg);
+  if (depsToInstall.length > 0) {
+    let cwd = process.cwd();
+    yarnInstall({ deps: depsToInstall, dev: true, cwd });
+  }
 
-const configFileTemplate = (fileName) => `
+  const configFileTemplate = (fileName) => `
 /* eslint-env node */
 'use strict';
 
@@ -41,18 +36,12 @@ module.exports = require('@smile-io/frontend-styleguide/${fileName.replace('.js'
 
 `;
 
-const configFiles = [
-  '.prettierrc.js',
-  '.eslintrc.js',
-  '.template-lintrc.js',
-  'stylelint.config.js',
-];
+  configFiles.forEach((configFile) =>
+    fs.writeFileSync(path.join(process.cwd(), configFile), configFileTemplate(configFile)),
+  );
 
-configFiles.forEach((configFile) =>
-  fs.writeFileSync(path.join(process.cwd(), configFile), configFileTemplate(configFile)),
-);
-
-console.log('🎉🎉🎉 Setup complete');
-console.log(
-  'For instructions on how to setup your IDE with various tools that have been setup for you visit https://github.com/smile-io/ember-styleguide#ide-support',
-);
+  console.log(`🎉🎉🎉 Setup complete. ${selectedTools.join(',')} successfully configured`);
+  console.log(
+    'For instructions on how to setup your IDE with various tools that have been setup for you visit https://github.com/smile-io/ember-styleguide#ide-support',
+  );
+})();
