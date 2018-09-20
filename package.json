@@ -1,6 +1,6 @@
 {
   "name": "@smile-io/ember-styleguide",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Styleguide definitions for smile.io projects",
   "license": "ISC",
   "author": "siva@rubberduck.engineering",
