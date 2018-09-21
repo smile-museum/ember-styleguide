@@ -14,17 +14,14 @@ module.exports = {
     'no-empty': ['error', { allowEmptyCatch: true }],
     'object-curly-spacing': ['error', 'always', { arraysInObjects: true }],
     // 'array-bracket-spacing': ['error', 'always'],
-    'array-element-newline': ['error', 'consistent'],
+    // 'array-element-newline': ['error', 'consistent'],
     quotes: ['error', 'single', { allowTemplateLiterals: true, avoidEscape: true }],
     semi: ['error', 'always'],
     // 'template-curly-spacing': ['error', 'always'],
-    'generator-star-spacing': [
-      'error',
-      {
-        before: true,
-        after: false,
-      },
-    ],
+    // 'generator-star-spacing': [
+    //   'error',
+    //   'before'
+    // ],
 
     'prettier/prettier': 2,
 
@@ -37,6 +34,7 @@ module.exports = {
       {
         order: [
           // prettier-ignore
+          'service',
           'attribute',
           'relationship',
           'single-line-function',
