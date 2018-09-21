@@ -30,12 +30,16 @@ const getUserSelection = require('./lib/get-user-selection');
     yarnInstall({ deps: depsToInstall, dev: true, cwd });
   }
 
-  const configFileTemplate = (fileName) => `
-/* eslint-env node */
+  selectedTools.forEach((toolName) => {
+    if (tools[toolName].postInstall) {
+      tools[toolName].postInstall();
+    }
+  });
+
+  const configFileTemplate = (fileName) => `/* eslint-env node */
 'use strict';
 
 module.exports = require('@smile-io/ember-styleguide/${fileName.replace('.js', '')}');
-
 `;
 
   configFiles.forEach((configFile) =>
