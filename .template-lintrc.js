@@ -7,7 +7,7 @@ module.exports = {
       rules: {
         'img-alt-attributes': false,
         'simple-unless': false,
-        quotes: 'double'
+        quotes: 'double',
       },
     },
   },
