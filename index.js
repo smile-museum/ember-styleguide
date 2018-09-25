@@ -12,18 +12,12 @@ const getUserSelection = require('./lib/get-user-selection');
 (async () => {
   let selectedTools = await getUserSelection();
 
-  let depsToInstall = [];
-  let configFiles = [];
-
-  selectedTools.forEach((toolName) => {
+  let depsToInstall = selectedTools.reduce((depsToInstall, toolName) => {
     if (tools[toolName].deps) {
-      depsToInstall = [...depsToInstall, ...tools[toolName].deps];
+      return [...depsToInstall, ...tools[toolName].deps];
     }
-
-    if (tools[toolName].configFiles) {
-      configFiles = [...configFiles, ...tools[toolName].configFiles];
-    }
-  });
+    return depsToInstall;
+  }, []);
 
   if (depsToInstall.length > 0) {
     let cwd = process.cwd();
@@ -42,9 +36,23 @@ const getUserSelection = require('./lib/get-user-selection');
 module.exports = require('@smile-io/ember-styleguide/${fileName.replace('.js', '')}');
 `;
 
-  configFiles.forEach((configFile) =>
-    fs.writeFileSync(path.join(process.cwd(), configFile), configFileTemplate(configFile)),
-  );
+  selectedTools.forEach((toolName) => {
+    let configFiles = tools[toolName].configFiles;
+
+    if (tools.configFiles) {
+      return;
+    }
+
+    configFiles.forEach((configFile) => {
+      let content = configFileTemplate(configFile);
+
+      if (tools[toolName].getTemplate) {
+        content = tools[toolName].getTemplate(configFile);
+      }
+
+      fs.writeFileSync(path.join(process.cwd(), configFile), content);
+    });
+  });
 
   console.log(`🎉🎉🎉 Setup complete. ${selectedTools.join(',')} successfully configured`);
   console.log(
