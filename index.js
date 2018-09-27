@@ -39,6 +39,12 @@ const isAddon = (pkg) => {
     }
   });
 
+  let pkgScripts = pkg.scripts;
+  let scripts = {};
+  Object.keys(pkgScripts)
+    .sort()
+    .forEach((key) => (scripts[key] = pkgScripts[key]));
+  pkg.scripts = scripts;
   writePkg.sync(pkg);
 
   selectedTools.forEach((toolName) => {
