@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parserOptions: {
-    ecmaVersion: 2017,
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
   plugins: ['ember', 'prettier'],
@@ -13,24 +13,17 @@ module.exports = {
     'comma-dangle': 'off',
     'no-empty': ['error', { allowEmptyCatch: true }],
     'object-curly-spacing': ['error', 'always', { arraysInObjects: true }],
-    // 'array-bracket-spacing': ['error', 'always'],
-    // 'array-element-newline': ['error', 'consistent'],
     quotes: ['error', 'single', { allowTemplateLiterals: true, avoidEscape: true }],
     semi: ['error', 'always'],
-    // 'template-curly-spacing': ['error', 'always'],
-    // 'generator-star-spacing': [
-    //   'error',
-    //   'before'
-    // ],
 
-    'prettier/prettier': 2,
+    'prettier/prettier': 'off',
 
-    'ember/no-empty-attrs': 2,
-    'ember/no-jquery': 2,
-    'ember/no-observers': 2,
+    'ember/no-empty-attrs': 'off',
+    'ember/no-jquery': 'off',
+    'ember/no-observers': 'off',
 
     'ember/order-in-models': [
-      2,
+      'off',
       {
         order: [
           // prettier-ignore
@@ -44,7 +37,7 @@ module.exports = {
     ],
 
     'ember/order-in-components': [
-      2,
+      'off',
       {
         order: [
           'service',
@@ -72,7 +65,7 @@ module.exports = {
     ],
 
     'ember/order-in-controllers': [
-      2,
+      'off',
       {
         order: [
           'query-params',
@@ -91,7 +84,7 @@ module.exports = {
     ],
 
     'ember/order-in-routes': [
-      2,
+      'off',
       {
         order: [
           'service',
@@ -130,7 +123,7 @@ module.exports = {
       ],
       parserOptions: {
         sourceType: 'script',
-        ecmaVersion: 2015,
+        ecmaVersion: 2018,
       },
       env: {
         browser: false,
