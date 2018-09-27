@@ -18,10 +18,6 @@ module.exports = {
 
     'prettier/prettier': 'off',
 
-    'ember/no-empty-attrs': 'off',
-    'ember/no-jquery': 'off',
-    'ember/no-observers': 'off',
-
     'ember/order-in-models': [
       'off',
       {
