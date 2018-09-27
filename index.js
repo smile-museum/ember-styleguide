@@ -57,7 +57,7 @@ const isAddon = (pkg) => {
     configFiles.forEach((configFile) => {
       fs.writeFileSync(
         path.join(process.cwd(), configFile),
-        tools[toolName].getTemplate(configFile)
+        tools[toolName].getTemplate(configFile, isPackageAnAddon)
       );
     });
   });
