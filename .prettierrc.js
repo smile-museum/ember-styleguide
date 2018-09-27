@@ -2,7 +2,7 @@ module.exports = {
   arrowParens: 'always',
   printWidth: 100,
   singleQuote: true,
-  trailingComma: 'all',
   tabWidth: 2,
+  trailingComma: 'es5',
   useTabs: false,
 };
