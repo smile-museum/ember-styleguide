@@ -10,7 +10,6 @@ const writePkg = require('write-pkg');
 
 const tools = require('./lib/tools');
 const getUserSelection = require('./lib/get-user-selection');
-const getDefaultConfigFileTemplate = require('./lib/utils/get-default-config-file-template');
 
 const isAddon = (pkg) => {
   let val = Array.isArray(pkg.keywords) && pkg.keywords.indexOf('ember-addon') >= 0;
@@ -50,9 +49,10 @@ const isAddon = (pkg) => {
     }
 
     configFiles.forEach((configFile) => {
-      let content = tools[toolName].getTemplate(configFile);
-
-      fs.writeFileSync(path.join(process.cwd(), configFile), content);
+      fs.writeFileSync(
+        path.join(process.cwd(), configFile),
+        tools[toolName].getTemplate(configFile)
+      );
     });
   });
 
