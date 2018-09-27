@@ -117,13 +117,11 @@ module.exports = {
         'blueprints/*/index.js',
         'config/**/*.js',
         'tests/dummy/config/**/*.js',
-        'lib/**/*.js',
-        'lib/*.js',
       ],
       excludedFiles: ['addon/**', 'addon-test-support/**', 'app/**', 'tests/dummy/app/**'],
       parserOptions: {
         sourceType: 'script',
-        ecmaVersion: 2018,
+        ecmaVersion: 2015,
       },
       env: {
         browser: false,
