@@ -116,6 +116,7 @@ module.exports = {
         'config/**/*.js',
         'lib/*/*.js',
         'lib/*.js',
+        'index.js',
       ],
       parserOptions: {
         sourceType: 'script',
