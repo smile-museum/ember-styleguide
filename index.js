@@ -50,11 +50,7 @@ const isAddon = (pkg) => {
     }
 
     configFiles.forEach((configFile) => {
-      let content = getDefaultConfigFileTemplate(configFile);
-
-      if (tools[toolName].getTemplate) {
-        content = tools[toolName].getTemplate(configFile);
-      }
+      let content = tools[toolName].getTemplate(configFile);
 
       fs.writeFileSync(path.join(process.cwd(), configFile), content);
     });
