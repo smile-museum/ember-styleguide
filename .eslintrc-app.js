@@ -10,16 +10,16 @@ module.exports = {
     browser: true,
   },
   rules: {
-    'comma-dangle': 'off',
+    'comma-dangle': 'error',
     'no-empty': ['error', { allowEmptyCatch: true }],
     'object-curly-spacing': ['error', 'always', { arraysInObjects: true }],
     quotes: ['error', 'single', { allowTemplateLiterals: true, avoidEscape: true }],
     semi: ['error', 'always'],
 
-    'prettier/prettier': 'off',
+    'prettier/prettier': 'error',
 
     'ember/order-in-models': [
-      'off',
+      'error',
       {
         order: [
           // prettier-ignore
@@ -33,7 +33,7 @@ module.exports = {
     ],
 
     'ember/order-in-components': [
-      'off',
+      'error',
       {
         order: [
           'service',
@@ -61,7 +61,7 @@ module.exports = {
     ],
 
     'ember/order-in-controllers': [
-      'off',
+      'error',
       {
         order: [
           'query-params',
@@ -80,7 +80,7 @@ module.exports = {
     ],
 
     'ember/order-in-routes': [
-      'off',
+      'error',
       {
         order: [
           'service',
