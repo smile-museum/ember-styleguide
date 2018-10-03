@@ -18,8 +18,6 @@ const isAddon = (pkg) => {
 
 (async () => {
   let selectedTools = await getUserSelection();
-  let pkg = readPkg.sync({ normalize: false });
-  let isPackageAnAddon = isAddon(pkg);
 
   let depsToInstall = selectedTools.reduce((depsToInstall, toolName) => {
     if (tools[toolName].deps) {
@@ -32,6 +30,9 @@ const isAddon = (pkg) => {
     let cwd = process.cwd();
     yarnInstall({ deps: depsToInstall, dev: true, cwd });
   }
+
+  let pkg = readPkg.sync({ normalize: false });
+  let isPackageAnAddon = isAddon(pkg);
 
   selectedTools.forEach((toolName) => {
     if (tools[toolName].postInstall) {
