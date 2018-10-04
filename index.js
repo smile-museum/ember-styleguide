@@ -12,7 +12,8 @@ const tools = require('./lib/tools');
 const getUserSelection = require('./lib/get-user-selection');
 
 const isAddon = (pkg) => {
-  let val = Array.isArray(pkg.keywords) && pkg.keywords.indexOf('ember-addon') >= 0;
+  let val =
+    Array.isArray(pkg.keywords) && pkg.keywords.indexOf('ember-addon') >= 0;
   return val;
 };
 
@@ -63,7 +64,9 @@ const isAddon = (pkg) => {
     });
   });
 
-  console.log(`🎉🎉🎉 Setup complete. ${selectedTools.join(',')} successfully configured`);
+  console.log(
+    `🎉🎉🎉 Setup complete. ${selectedTools.join(',')} successfully configured`
+  );
   console.log(
     'For instructions on how to setup your IDE with various tools that have been setup for you visit https://github.com/smile-io/ember-styleguide#ide-support'
   );
