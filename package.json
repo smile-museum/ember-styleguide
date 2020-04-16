@@ -26,5 +26,9 @@
     "hooks": {
       "pre-commit": "precise-commits"
     }
+  },
+  "volta": {
+    "node": "12.16.2",
+    "yarn": "1.22.4"
   }
 }
