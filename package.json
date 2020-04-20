@@ -11,16 +11,16 @@
     "test": "echo 'Good to go 👍🏻'"
   },
   "dependencies": {
-    "inquirer": "^7.0.0",
-    "read-pkg": "^5.2.0",
-    "require-directory": "^2.1.1",
-    "write-pkg": "^4.0.0",
-    "yarn-install": "^1.0.0"
+    "inquirer": "7.0.0",
+    "read-pkg": "5.2.0",
+    "require-directory": "2.1.1",
+    "write-pkg": "4.0.0",
+    "yarn-install": "1.0.0"
   },
   "devDependencies": {
-    "husky": "^3.0.9",
-    "precise-commits": "^1.0.2",
-    "prettier": "^1.18.2"
+    "husky": "3.0.9",
+    "precise-commits": "1.0.2",
+    "prettier": "1.18.2"
   },
   "husky": {
     "hooks": {
