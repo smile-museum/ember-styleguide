@@ -5,7 +5,7 @@ module.exports = {
     recommended: {
       extends: 'recommended',
       rules: {
-        'img-alt-attributes': false,
+        'require-valid-alt-text': false,
         'simple-unless': false,
         quotes: 'double',
       },
