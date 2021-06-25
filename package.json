@@ -8,7 +8,8 @@
     "setup-smile-styleguide": "index.js"
   },
   "scripts": {
-    "test": "echo 'Good to go 👍🏻'"
+    "test": "echo 'Good to go 👍🏻'",
+    "prepare": "husky install"
   },
   "dependencies": {
     "inquirer": "8.1.1",
@@ -18,14 +19,9 @@
     "yarn-install": "1.0.0"
   },
   "devDependencies": {
-    "husky": "4.3.8",
+    "husky": "6.0.0",
     "precise-commits": "1.0.2",
     "prettier": "2.2.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "precise-commits"
-    }
   },
   "volta": {
     "node": "14.17.1",
