@@ -12,7 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "inquirer": "8.2.1",
+    "inquirer": "8.2.2",
     "read-pkg": "7.1.0",
     "require-directory": "2.1.1",
     "write-pkg": "4.0.0",
